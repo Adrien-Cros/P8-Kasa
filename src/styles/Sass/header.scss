@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    gap: 57px;
+
+    a {
+      color: #ff6060;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 500;
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}

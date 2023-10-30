@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header .navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+  gap: 57px;
+}
+.header .navbar a {
+  color: #ff6060;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 500;
+}
+.header .navbar a.active {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=header.css.map */

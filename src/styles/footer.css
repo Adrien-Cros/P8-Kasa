@@ -1,0 +1,34 @@
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  height: 209px;
+}
+footer .footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 68px;
+  margin-bottom: 29px;
+}
+@media (max-width: 768px) {
+  footer .footer-info {
+    justify-content: center;
+    margin-top: 66px;
+    margin-bottom: 58px;
+  }
+}
+footer .footer-desc {
+  color: white;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  footer .footer-desc {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

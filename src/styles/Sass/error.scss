@@ -1,0 +1,60 @@
+$breakpoint: 768px;
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  color: #ff6060;
+  font-family: Montserrat;
+  font-style: normal;
+  gap: 139px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  @media (max-width: $breakpoint) {
+    gap: 113px;
+  }
+
+  .title {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: #ff6060;
+    font-size: 288px;
+    font-weight: 700;
+    width: 597px;
+    height: 263px;
+
+    @media (max-width: $breakpoint) {
+      width: 198px;
+      height: 99px;
+      font-size: 96px;
+    }
+  }
+
+  .description {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: 36px;
+    font-weight: 500;
+
+    @media (max-width: $breakpoint) {
+      width: 260px;
+      font-size: 18px;
+    }
+  }
+
+  .return-main a {
+    display: flex;
+    justify-content: center;
+    color: #ff6060;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 139px;
+    @media (max-width: $breakpoint) {
+      margin-bottom: 113px;
+      font-size: 14px;
+    }
+  }
+}
