@@ -1,0 +1,30 @@
+.img-container {
+  margin-top: 50px;
+  margin-bottom: 43px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 223px;
+  border-radius: 25px;
+  background: #000;
+}
+.img-container .img-banner {
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+  height: 223px;
+  width: 100%;
+  border-radius: 25px;
+  opacity: 0.65;
+}
+.img-container .slogan {
+  position: absolute;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  top: 36%;
+}
+
+/*# sourceMappingURL=banner.css.map */

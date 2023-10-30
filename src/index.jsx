@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom'
 import './styles/index.css'
 import Home from './pages/Home/home'
 import Apropos from './pages/apropos'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Error from './components/Error/index'
+import Header from './components/Header/Header'
+import Footer from './components//Footer/Footer'
+import Error from './components/Error/Error'
+import Banner from './components/Banner/Banner'
+import Gallery from './components/Gallery/Gallery'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 ReactDOM.render(
@@ -17,6 +19,8 @@ ReactDOM.render(
         <Route path="/apropos" element={<Apropos />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Banner />
+      <Gallery />
       <Footer />
     </Router>
   </React.StrictMode>,
