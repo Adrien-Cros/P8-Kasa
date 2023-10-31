@@ -1,8 +1,7 @@
 $breakpoint: 768px;
 
 .img-container {
-  margin-top: 50px;
-  margin-bottom: 43px;
+  margin: 50px 50px 43px 50px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -11,8 +10,7 @@ $breakpoint: 768px;
   background: #000;
   @media (max-width: $breakpoint) {
     height: 111px;
-    margin-top: 27px;
-    margin-bottom: 22px;
+    margin: 20px;
   }
 
   .img-banner {

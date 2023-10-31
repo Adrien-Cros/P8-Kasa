@@ -3,6 +3,11 @@ $breakpoint: 768px;
 .header {
   display: flex;
   justify-content: space-between;
+  margin: 40px 50px 0 50px;
+
+  @media (max-width: $breakpoint) {
+    margin: 20px;
+  }
 
   .logo {
     @media (max-width: $breakpoint) {

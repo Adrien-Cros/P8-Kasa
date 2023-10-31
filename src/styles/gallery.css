@@ -1,6 +1,5 @@
 .card-container {
   display: flex;
-  height: 730px;
   flex-wrap: wrap;
   row-gap: 50px;
   column-gap: 50px;
@@ -11,11 +10,13 @@
   padding-right: 50px;
   border-radius: 25px;
   background: #f6f6f6;
-  margin-bottom: 50px;
+  margin: 0 50px 50px 50px;
 }
 @media (max-width: 768px) {
   .card-container {
     padding: 0;
+    margin-bottom: 27px;
+    background: white;
     row-gap: 20px;
   }
 }
