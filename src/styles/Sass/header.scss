@@ -1,18 +1,33 @@
+$breakpoint: 768px;
+
 .header {
   display: flex;
   justify-content: space-between;
+
+  .logo {
+    @media (max-width: $breakpoint) {
+      width: 145px;
+      height: auto;
+    }
+  }
 
   .navbar {
     display: flex;
     justify-content: flex-end;
     align-self: center;
     gap: 57px;
+    @media (max-width: $breakpoint) {
+      gap: 26px;
+    }
 
     a {
       color: #ff6060;
       text-decoration: none;
       font-size: 24px;
       font-weight: 500;
+      @media (max-width: $breakpoint) {
+        font-size: 16px;
+      }
 
       &.active {
         text-decoration: underline;

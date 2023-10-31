@@ -1,3 +1,5 @@
+$breakpoint: 768px;
+
 .img-container {
   margin-top: 50px;
   margin-bottom: 43px;
@@ -7,6 +9,11 @@
   height: 223px;
   border-radius: 25px;
   background: #000;
+  @media (max-width: $breakpoint) {
+    height: 111px;
+    margin-top: 27px;
+    margin-bottom: 22px;
+  }
 
   .img-banner {
     display: flex;
@@ -16,6 +23,9 @@
     width: 100%;
     border-radius: 25px;
     opacity: 0.65;
+    @media (max-width: $breakpoint) {
+      height: 111px;
+    }
   }
   .slogan {
     position: absolute;
@@ -25,5 +35,11 @@
     font-style: normal;
     font-weight: 500;
     top: 36%;
+    @media (max-width: $breakpoint) {
+      font-size: 24px;
+      width: 217px;
+      left: 16px;
+      top: 32px;
+    }
   }
 }

@@ -2,17 +2,33 @@
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .header .logo {
+    width: 145px;
+    height: auto;
+  }
+}
 .header .navbar {
   display: flex;
   justify-content: flex-end;
   align-self: center;
   gap: 57px;
 }
+@media (max-width: 768px) {
+  .header .navbar {
+    gap: 26px;
+  }
+}
 .header .navbar a {
   color: #ff6060;
   text-decoration: none;
   font-size: 24px;
   font-weight: 500;
+}
+@media (max-width: 768px) {
+  .header .navbar a {
+    font-size: 16px;
+  }
 }
 .header .navbar a.active {
   text-decoration: underline;

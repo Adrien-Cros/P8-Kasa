@@ -8,6 +8,13 @@
   border-radius: 25px;
   background: #000;
 }
+@media (max-width: 768px) {
+  .img-container {
+    height: 111px;
+    margin-top: 27px;
+    margin-bottom: 22px;
+  }
+}
 .img-container .img-banner {
   display: flex;
   justify-content: center;
@@ -17,6 +24,11 @@
   border-radius: 25px;
   opacity: 0.65;
 }
+@media (max-width: 768px) {
+  .img-container .img-banner {
+    height: 111px;
+  }
+}
 .img-container .slogan {
   position: absolute;
   color: #fff;
@@ -25,6 +37,14 @@
   font-style: normal;
   font-weight: 500;
   top: 36%;
+}
+@media (max-width: 768px) {
+  .img-container .slogan {
+    font-size: 24px;
+    width: 217px;
+    left: 16px;
+    top: 32px;
+  }
 }
 
 /*# sourceMappingURL=banner.css.map */
