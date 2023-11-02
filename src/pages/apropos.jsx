@@ -4,37 +4,44 @@ import bannerImg from '../assets/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png'
 import arrow from '../assets/arrow_back_ios-24px 2.png'
 
 function Apropos() {
-  const [dropdown1, setDropdown1] = useState(false)
-  const [dropdown2, setDropdown2] = useState(false)
-  const [dropdown3, setDropdown3] = useState(false)
-  const [dropdown4, setDropdown4] = useState(false)
+  const dropdowns = [
+    {
+      state: useState(false),
+      content:
+        'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.',
+    },
+    {
+      state: useState(false),
+      content:
+        'La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.',
+    },
+    {
+      state: useState(false),
+      content:
+        "Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.",
+    },
+    {
+      state: useState(false),
+      content:
+        "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
+    },
+  ]
 
-  const toggleDropdown1 = () => {
-    setDropdown1(!dropdown1)
+  const toggleDropdown = (index) => {
+    const [isOpen, setDropdown] = dropdowns[index].state
+    setDropdown(!isOpen)
   }
 
-  const toggleDropdown2 = () => {
-    setDropdown2(!dropdown2)
-  }
+  const toggleArrow = (index) => {
+    toggleDropdown(index)
+    const arrowIcon = document.querySelector(`.arrow-${index}`)
 
-  const toggleDropdown3 = () => {
-    setDropdown3(!dropdown3)
-  }
-
-  const toggleDropdown4 = () => {
-    setDropdown4(!dropdown4)
-  }
-
-  const toggleArrow = (dropdownFunction) => {
-    dropdownFunction()
-    const arrowIcon = document.querySelector('.arrow')
-    if (dropdown1 === true) {
+    if (dropdowns[index].state[0] === true) {
       arrowIcon.classList.remove('arrow-active')
       arrowIcon.classList.add('arrow-deactive')
-    }
-    if (dropdown1 === false) {
-      arrowIcon.classList.add('arrow-active')
+    } else {
       arrowIcon.classList.remove('arrow-deactive')
+      arrowIcon.classList.add('arrow-active')
     }
   }
 
@@ -48,81 +55,21 @@ function Apropos() {
         />
       </div>
       <div className="dropdown-btn">
-        <div className="dropdown-btn-item">
-          <button className="btn-dropdown">
-            Fiabilité
-            <img
-              className="arrow"
-              src={arrow}
-              alt="Flèche"
-              onClick={() => toggleArrow(toggleDropdown1)}
-            />
-          </button>
-          {dropdown1 && (
-            <div className="dropdown-content">
-              Les annonces postées sur Kasa garantissent une fiabilité totale.
-              Les photos sont conformes aux logements, et toutes les
-              informations sont régulièrement vérifiées par nos équipes.
-            </div>
-          )}
-        </div>
-        <div className="dropdown-btn-item">
-          <button className="btn-dropdown">
-            Respect
-            <img
-              className="arrow"
-              src={arrow}
-              alt="Flèche"
-              onClick={toggleDropdown2}
-            />
-          </button>
-          {dropdown2 && (
-            <div className="dropdown-content">
-              La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-              comportement discriminatoire ou de perturbation du voisinage
-              entraînera une exclusion de notre plateforme.
-            </div>
-          )}
-        </div>
-        <div className="dropdown-btn-item">
-          <button className="btn-dropdown">
-            Service
-            <img
-              className="arrow"
-              src={arrow}
-              alt="Flèche"
-              onClick={toggleDropdown3}
-            />
-          </button>
-          {dropdown3 && (
-            <div className="dropdown-content">
-              Nos équipes se tiennent à votre disposition pour vous fournir une
-              expérience parfaite. N'hésitez pas à nous contacter si vous avez
-              la moindre question.
-            </div>
-          )}
-        </div>
-        <div className="dropdown-btn-item">
-          <button className="btn-dropdown">
-            Sécurité
-            <img
-              className="arrow"
-              src={arrow}
-              alt="Flèche"
-              onClick={toggleDropdown4}
-            />
-          </button>
-          {dropdown4 && (
-            <div className="dropdown-content">
-              La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
-              pour les voyageurs, chaque logement correspond aux critères de
-              sécurité établis par nos services. En laissant une note aussi bien
-              à l'hôte qu'au locataire, cela permet à nos équipes de vérifier
-              que les standards sont bien respectés. Nous organisons également
-              des ateliers sur la sécurité domestique pour nos hôtes.
-            </div>
-          )}
-        </div>
+        {dropdowns.map((item, index) => (
+          <div className="dropdown-btn-item" key={index}>
+            <button className="btn-dropdown" onClick={() => toggleArrow(index)}>
+              {['Fiabilité', 'Respect', 'Service', 'Sécurité'][index]}
+              <img
+                className={`arrow arrow-${index}`}
+                src={arrow}
+                alt="Flèche"
+              />
+            </button>
+            {item.state[0] && (
+              <div className="dropdown-content">{item.content}</div>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   )
