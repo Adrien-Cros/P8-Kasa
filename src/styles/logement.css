@@ -1,3 +1,19 @@
+@keyframes dropdown-arrow-initial {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes dropdown-arrow-reverse {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .logement {
   display: flex;
   justify-content: center;
@@ -14,6 +30,17 @@
   height: 100%;
   border-radius: 25px;
   object-fit: cover;
+}
+.logement .carousel .carousel-img-numbers {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  right: 50%;
+  bottom: 25px;
 }
 .logement .carousel .carousel-arrow-left,
 .logement .carousel .carousel-arrow-right {
@@ -107,12 +134,14 @@
 .logement-container .dropdown-container {
   display: flex;
   justify-content: space-between;
+  gap: 76px;
 }
 .logement-container .dropdown-container .dropdown {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 582px;
+  border: none;
+  width: 100%;
   padding: 10px 20px 10px 10px;
   border-radius: 10px;
   background: #ff6060;
@@ -122,8 +151,41 @@
   font-style: normal;
   font-weight: 500;
 }
-.logement-container .dropdown-container .dropdown .arrow-up {
+.logement-container .dropdown-container .dropdown .arrow {
   cursor: pointer;
+}
+.logement-container .dropdown-container .dropdown .arrow-active {
+  animation: dropdown-arrow-initial 0.3s ease-out forwards;
+}
+.logement-container .dropdown-container .dropdown .arrow-deactive {
+  animation: dropdown-arrow-reverse 0.3s ease-out forwards;
+}
+.logement-container .dropdown-container .dropdown-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.logement-container .dropdown-container .dropdown-item .dropdown-desc,
+.logement-container .dropdown-container .dropdown-item .dropdown-equip {
+  display: flex;
+  height: 100%;
+  border-radius: 5px;
+  background: #f6f6f6;
+  color: #ff6060;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+}
+.logement-container .dropdown-container .dropdown-item .dropdown-desc {
+  padding: 27px 27px 19px 18px;
+}
+.logement-container .dropdown-container .dropdown-item .dropdown-equip {
+  padding: 0px 0px 0px 18px;
+}
+.logement-container .dropdown-container .dropdown-item .dropdown-equip ul {
+  padding: 0;
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=logement.css.map */
