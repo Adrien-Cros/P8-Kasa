@@ -10,7 +10,7 @@
   padding-right: 50px;
   border-radius: 25px;
   background: #f6f6f6;
-  margin: 0 50px 50px 50px;
+  margin: 0 100px 50px 100px;
 }
 @media (max-width: 768px) {
   .card-container {

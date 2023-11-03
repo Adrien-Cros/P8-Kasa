@@ -6,6 +6,7 @@ import Apropos from './pages/apropos'
 import Header from './components/Header/Header'
 import Footer from './components//Footer/Footer'
 import Error from './components/Error/Error'
+import Logement from './components/Logement/Logement'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/apropos" element={<Apropos />} />
+        <Route path="/fiche-logement" element={<Logement />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

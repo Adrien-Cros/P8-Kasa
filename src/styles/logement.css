@@ -1,0 +1,129 @@
+.logement {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px 100px 50px 100px;
+}
+.logement .carousel {
+  position: relative;
+  width: 100%;
+  height: 415px;
+}
+.logement .carousel .carousel-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+}
+.logement .carousel .carousel-arrow-left,
+.logement .carousel .carousel-arrow-right {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+}
+.logement .carousel .carousel-arrow-left {
+  left: 23px;
+}
+.logement .carousel .carousel-arrow-right {
+  right: 23px;
+}
+
+.logement-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.logement-container .logement-title,
+.logement-container .logement-city {
+  display: flex;
+  align-self: flex-start;
+  margin: 0;
+  color: #ff6060;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+}
+.logement-container .logement-title {
+  font-size: 36px;
+}
+.logement-container .logement-city {
+  font-size: 18px;
+}
+.logement-container .logement-tags-container {
+  display: flex;
+  align-self: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+.logement-container .logement-tags-container .logement-tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  height: 25px;
+  border-radius: 10px;
+  background: #ff6060;
+  color: white;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+}
+.logement-container .host-rating {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+.logement-container .host-rating .host-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: -143px;
+}
+.logement-container .host-rating .host-container .host-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 93px;
+  height: 52px;
+  color: #ff6060;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+}
+.logement-container .host-rating .host-container .host-portrait {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  background: #c4c4c4;
+}
+.logement-container .host-rating .rating {
+  margin-top: 31px;
+}
+.logement-container .dropdown-container {
+  display: flex;
+  justify-content: space-between;
+}
+.logement-container .dropdown-container .dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 582px;
+  padding: 10px 20px 10px 10px;
+  border-radius: 10px;
+  background: #ff6060;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+}
+.logement-container .dropdown-container .dropdown .arrow-up {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=logement.css.map */

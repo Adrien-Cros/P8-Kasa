@@ -1,9 +1,5 @@
 function FicheLogement() {
-  return (
-    <div>
-      <h1>Fiche Logement</h1>
-    </div>
-  )
+  return <div></div>
 }
 
 export default FicheLogement
