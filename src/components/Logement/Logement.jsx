@@ -63,25 +63,29 @@ function Logement() {
     return (
       <section className="logement">
         <div className="carousel">
-          <div className="carousel-img-numbers">
-            {currentImageIndex + 1}/{logementData[0].pictures.length}
-          </div>
+          {logementData[0].pictures.length > 1 && (
+            <>
+              <div className="carousel-img-numbers">
+                {currentImageIndex + 1}/{logementData[0].pictures.length}
+              </div>
+              <img
+                className="carousel-arrow-left"
+                src={arrowLeft}
+                alt="Flèche vers la gauche"
+                onClick={prevImage}
+              ></img>
+              <img
+                className="carousel-arrow-right"
+                src={arrowRight}
+                alt="Flèche vers la droite"
+                onClick={nextImage}
+              ></img>
+            </>
+          )}
           <img
             className="carousel-img"
             src={logementData[0].pictures[currentImageIndex]}
             alt="Logement"
-          ></img>
-          <img
-            className="carousel-arrow-left"
-            src={arrowLeft}
-            alt="Flèche vers la gauche"
-            onClick={prevImage}
-          ></img>
-          <img
-            className="carousel-arrow-right"
-            src={arrowRight}
-            alt="Flèche vers la droite"
-            onClick={nextImage}
           ></img>
         </div>
         <div className="logement-container">
