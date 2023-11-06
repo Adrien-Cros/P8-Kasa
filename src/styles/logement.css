@@ -47,6 +47,7 @@
   position: absolute;
   cursor: pointer;
   top: 50%;
+  transform: translateY(-50%);
 }
 .logement .carousel .carousel-arrow-left {
   left: 23px;
