@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { useParams, Navigate } from 'react-router-dom'
-
 import '../../styles/logement.css'
+
 import arrowLeft from '../../assets/arrow-left.png'
 import arrowRight from '../../assets/arrow-right.png'
 import arrowUp from '../../assets/arrow_back_ios-24px 2.png'
+import emptyStar from '../../assets/empty-star.png'
+import fullStar from '../../assets/full-star.png'
+
 import locationData from '../../data/logements.json'
 
 function Logement() {
@@ -60,6 +63,8 @@ function Logement() {
   if (logementData.length === 0) {
     return <Navigate to="*" />
   } else {
+    const maxStars = 5
+    const rating = logementData[0].rating
     return (
       <section className="logement">
         <div className="carousel">
@@ -107,7 +112,16 @@ function Logement() {
                 alt={'portrait de ' + logementData[0].host.name}
               ></img>
             </div>
-            <div className="rating">{logementData[0].rating}/5</div>
+            <div className="rating-container">
+              {Array.from({ length: maxStars }, (_, index) => (
+                <img
+                  key={index}
+                  className="star"
+                  src={index < rating ? fullStar : emptyStar}
+                  alt="Etoile"
+                />
+              ))}
+            </div>
           </div>
           <div className="dropdown-container">
             <div className="dropdown-item">
