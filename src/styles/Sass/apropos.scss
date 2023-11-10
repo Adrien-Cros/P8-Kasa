@@ -22,6 +22,34 @@ $btn-and-content-color: #ff6060;
     transform: rotate(0deg);
   }
 }
+
+@keyframes content-appear {
+  0% {
+    height: 0;
+    color: transparent;
+    padding: 0 0 0 18px;
+  }
+
+  100% {
+    color: $btn-and-content-color;
+    height: 100%;
+    padding: 27px 27px 19px 18px;
+  }
+}
+
+@keyframes content-desappear {
+  0% {
+    color: $btn-and-content-color;
+    height: 100%;
+    padding: 27px 27px 19px 18px;
+  }
+
+  100% {
+    height: 0;
+    color: transparent;
+    padding: 0 0 0 18px;
+  }
+}
 /*****************************/
 
 .dropdown-btn {
@@ -76,7 +104,14 @@ $btn-and-content-color: #ff6060;
       font-size: 24px;
       font-style: normal;
       font-weight: 400;
-      padding: 27px 27px 19px 18px;
+      padding: 0;
+      height: 0;
+    }
+    .content-fade-in {
+      animation: content-appear 0.35s ease-in forwards;
+    }
+    .content-fade-out {
+      animation: content-desappear 0.35s ease forwards;
     }
   }
 }

@@ -66,7 +66,13 @@ function Apropos() {
               />
             </button>
             {item.state[0] && (
-              <div className="dropdown-content">{item.content}</div>
+              <div
+                className={`dropdown-content ${
+                  item.state[0] ? 'content-fade-in' : 'content-fade-out'
+                }`}
+              >
+                {item.content}
+              </div>
             )}
           </div>
         ))}
