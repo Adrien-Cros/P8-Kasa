@@ -1,5 +1,6 @@
+import Logement from '../components/Logement/Logement'
 function FicheLogement() {
-  return <div></div>
+  return <Logement />
 }
 
 export default FicheLogement

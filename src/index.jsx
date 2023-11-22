@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './styles/index.css'
 import Home from './pages/Home/home'
-import Apropos from './pages/apropos'
+import About from './pages/about'
 import Header from './components/Header/Header'
 import Footer from './components//Footer/Footer'
 import Error from './components/Error/Error'
@@ -15,7 +15,7 @@ ReactDOM.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/apropos" element={<Apropos />} />
+        <Route path="/about" element={<About />} />
         <Route path="/fiche-logement/:id" element={<Logement />} />
         <Route path="*" element={<Error />} />
       </Routes>
