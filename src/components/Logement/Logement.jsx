@@ -4,43 +4,15 @@ import '../../styles/logement.css'
 
 import arrowLeft from '../../assets/arrow-left.png'
 import arrowRight from '../../assets/arrow-right.png'
-import arrowUp from '../../assets/arrow_back_ios-24px 2.png'
 import emptyStar from '../../assets/empty-star.png'
 import fullStar from '../../assets/full-star.png'
 
+import Collapse from '../Collapse/Collapse'
 import locationData from '../../data/logements.json'
 
 function Logement() {
   const { id } = useParams()
   const logementData = locationData.filter((logement) => logement.id === id)
-
-  //gestion des dropdown
-  const [isDescriptionOpen, setDescriptionOpen] = useState(false)
-  const [isEquipementsOpen, setEquipementsOpen] = useState(false)
-
-  const toggleDescription = () => {
-    setDescriptionOpen(!isDescriptionOpen)
-    const arrow = document.querySelector('.arrow-desc')
-    if (isDescriptionOpen) {
-      arrow.classList.remove('arrow-active')
-      arrow.classList.add('arrow-deactive')
-    } else {
-      arrow.classList.remove('arrow-deactive')
-      arrow.classList.add('arrow-active')
-    }
-  }
-
-  const toggleEquipements = () => {
-    const arrow = document.querySelector('.arrow-equip')
-    if (isEquipementsOpen) {
-      arrow.classList.remove('arrow-active')
-      arrow.classList.add('arrow-deactive')
-    } else {
-      arrow.classList.remove('arrow-deactive')
-      arrow.classList.add('arrow-active')
-    }
-    setEquipementsOpen(!isEquipementsOpen)
-  }
 
   //Gestion du carrousel
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -124,35 +96,21 @@ function Logement() {
             </div>
           </div>
           <div className="dropdown-container">
-            <div className="dropdown-item">
-              <button className="dropdown" onClick={toggleDescription}>
-                Description
-                <img className="arrow arrow-desc" src={arrowUp} alt="Flèche" />
-              </button>
-              {isDescriptionOpen && (
-                <div className="dropdown-desc">
-                  {logementData[0].description}
-                </div>
-              )}
-            </div>
-            <div className="dropdown-item">
-              <button className="dropdown" onClick={toggleEquipements}>
-                Équipements
-                <img className="arrow arrow-equip" src={arrowUp} alt="Flèche" />
-              </button>
-              {isEquipementsOpen && (
-                <div className="dropdown-equip">
-                  <ul>
-                    {logementData[0].equipments.map((equipment) => (
-                      <li key={equipment}>
-                        {equipment}
-                        <br></br>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+            <Collapse
+              dropdownTitle="Description"
+              dropdownContent={logementData[0].description}
+              containerClass={'dropdown-btn-logement'}
+            />
+            <Collapse
+              dropdownTitle="Équipements"
+              dropdownContent={logementData[0].equipments.map((equipment) => (
+                <span key={equipment}>
+                  {equipment}
+                  <br />
+                </span>
+              ))}
+              containerClass={'dropdown-btn-logement'}
+            />
           </div>
         </div>
       </section>

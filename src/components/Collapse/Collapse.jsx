@@ -10,30 +10,28 @@ function Collapse(props) {
   }
 
   return (
-    <section>
-      <div className="dropdown-btn">
-        <div className="dropdown-btn-item">
-          <button className="btn-dropdown">
-            {props.aboutTitle}
-            <img
-              onClick={toggleDropdown}
-              className={`arrow ${
-                isCollapseOpen ? 'arrow-active' : 'arrow-deactive'
-              }`}
-              src={arrow}
-              alt="Flèche"
-            />
-          </button>
-          <div
-            className={`dropdown-content ${
-              isCollapseOpen ? 'content-fade-in' : 'content-fade-out'
+    <div className={props.containerClass}>
+      <div className="dropdown-btn-item">
+        <button className="btn-dropdown">
+          {props.dropdownTitle}
+          <img
+            onClick={toggleDropdown}
+            className={`arrow ${
+              isCollapseOpen ? 'arrow-active' : 'arrow-deactive'
             }`}
-          >
-            {props.aboutContent}
-          </div>
+            src={arrow}
+            alt="Flèche"
+          />
+        </button>
+        <div
+          className={`dropdown-content ${
+            isCollapseOpen ? 'content-fade-in' : 'content-fade-out'
+          }`}
+        >
+          {props.dropdownContent}
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

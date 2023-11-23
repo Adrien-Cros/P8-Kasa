@@ -15,8 +15,9 @@ function About() {
       {aboutInfo.map((dropdown, id) => (
         <Collapse
           key={id}
-          aboutTitle={dropdown.aboutTitle}
-          aboutContent={dropdown.aboutContent}
+          dropdownTitle={dropdown.aboutTitle}
+          dropdownContent={dropdown.aboutContent}
+          containerClass={'dropdown-btn-about'}
         />
       ))}
     </section>
