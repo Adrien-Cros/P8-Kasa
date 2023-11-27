@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './styles/index.css'
+import './styles/Sass/index.scss'
 import Routing from './components/Routing/Routing'
 
 ReactDOM.render(

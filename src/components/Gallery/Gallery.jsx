@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import locationData from '../../data/logements.json'
-import '../../styles/gallery.css'
+import '../../styles/Sass/gallery.scss'
 
 function Gallery() {
   return (

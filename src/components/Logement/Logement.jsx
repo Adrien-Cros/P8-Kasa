@@ -1,5 +1,5 @@
 import { useParams, Navigate } from 'react-router-dom'
-import '../../styles/logement.css'
+import '../../styles/Sass/logement.scss'
 
 import emptyStar from '../../assets/empty-star.png'
 import fullStar from '../../assets/full-star.png'

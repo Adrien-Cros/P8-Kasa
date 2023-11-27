@@ -1,4 +1,4 @@
-import '../../styles/error.css'
+import '../../styles/Sass/error.scss'
 import { NavLink } from 'react-router-dom'
 
 function Error() {

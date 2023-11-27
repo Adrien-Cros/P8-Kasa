@@ -1,4 +1,4 @@
-import '../../styles/banner.css'
+import '../../styles/Sass/banner.scss'
 import bannerImg from '../../assets/IMG.png'
 
 function Banner() {
