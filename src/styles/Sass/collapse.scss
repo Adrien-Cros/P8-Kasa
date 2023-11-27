@@ -104,10 +104,14 @@ $btn-and-content-color: #ff6060;
       cursor: pointer;
     }
     .arrow-active {
-      animation: dropdown-arrow-initial 0.3s ease-out forwards;
+      transform: rotate(-180deg);
+      transition: 0.3s all ease-in-out;
+      //animation: dropdown-arrow-initial 0.3s ease-out forwards;
     }
     .arrow-deactive {
-      animation: dropdown-arrow-reverse 0.3s ease-out forwards;
+      transform: rotate(0deg);
+      transition: 0.3s all ease-in-out;
+      //animation: dropdown-arrow-reverse 0.3s ease-out forwards;
     }
   }
 
@@ -119,7 +123,7 @@ $btn-and-content-color: #ff6060;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    padding: 0;
+    padding: 0 0 0 18px;
     max-height: 0;
 
     @media (max-width: $breakpoint) {
@@ -127,9 +131,23 @@ $btn-and-content-color: #ff6060;
     }
   }
   .content-fade-in {
-    animation: content-appear 0.3s ease-in forwards;
+    opacity: 1;
+    max-height: fit-content;
+    padding: 27px 27px 19px 18px;
+    transition:
+      opacity 0.3s ease,
+      max-height 0.3s ease,
+      padding 0.3s ease;
+    //animation: content-appear 0.35s ease forwards;
   }
   .content-fade-out {
-    animation: content-desappear 0.3s ease-out forwards;
+    opacity: 0;
+    max-height: 0;
+    padding: 0 0 0 18px;
+    transition:
+      opacity 0.3s ease,
+      max-height 0.3s ease,
+      padding 0.3s ease;
+    //animation: content-desappear 0.35s ease forwards;
   }
 }
