@@ -3,19 +3,21 @@ import React, { useState } from 'react'
 import arrowLeft from '../../assets/arrow-left.png'
 import arrowRight from '../../assets/arrow-right.png'
 
-function Carrousel({ logementData }) {
+function Carrousel({ pictures }) {
   //Gestion du carrousel
+  const pictureNb = pictures.length
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
   const prevImage = () => {
     if (currentImageIndex > 0) {
       setCurrentImageIndex(currentImageIndex - 1)
     } else {
-      setCurrentImageIndex(logementData[0].pictures.length - 1)
+      setCurrentImageIndex(pictureNb - 1)
     }
   }
 
   const nextImage = () => {
-    if (currentImageIndex < logementData[0].pictures.length - 1) {
+    if (currentImageIndex < pictureNb - 1) {
       setCurrentImageIndex(currentImageIndex + 1)
     } else {
       setCurrentImageIndex(0)
@@ -24,10 +26,10 @@ function Carrousel({ logementData }) {
 
   return (
     <div className="carousel">
-      {logementData[0].pictures.length > 1 && (
+      {pictureNb > 1 && (
         <>
           <div className="carousel-img-numbers">
-            {currentImageIndex + 1}/{logementData[0].pictures.length}
+            {currentImageIndex + 1}/{pictureNb}
           </div>
           <img
             className="carousel-arrow-left"
@@ -45,7 +47,7 @@ function Carrousel({ logementData }) {
       )}
       <img
         className="carousel-img"
-        src={logementData[0].pictures[currentImageIndex]}
+        src={pictures[currentImageIndex]}
         alt="Logement"
       ></img>
     </div>

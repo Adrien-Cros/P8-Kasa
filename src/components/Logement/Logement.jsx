@@ -16,16 +16,17 @@ function Logement() {
     return <Navigate to="*" />
   } else {
     const maxStars = 5
-    const rating = logementData[0].rating
+    const selectedLogement = logementData[0]
+    const rating = selectedLogement.rating
     return (
       <section className="logement">
-        <Carrousel logementData={logementData} />
+        <Carrousel pictures={selectedLogement.pictures} />
 
         <div className="logement-container">
-          <h2 className="logement-title">{logementData[0].title}</h2>
-          <h3 className="logement-city">{logementData[0].location}</h3>
+          <h2 className="logement-title">{selectedLogement.title}</h2>
+          <h3 className="logement-city">{selectedLogement.location}</h3>
           <div className="logement-tags-container">
-            {logementData[0].tags.map((tag) => (
+            {selectedLogement.tags.map((tag) => (
               <div className="logement-tags" key={tag}>
                 {tag}
               </div>
@@ -33,11 +34,11 @@ function Logement() {
           </div>
           <div className="host-rating">
             <div className="host-container">
-              <div className="host-name">{logementData[0].host.name}</div>
+              <div className="host-name">{selectedLogement.host.name}</div>
               <img
                 className="host-portrait"
-                src={logementData[0].host.picture}
-                alt={'portrait de ' + logementData[0].host.name}
+                src={selectedLogement.host.picture}
+                alt={'portrait de ' + selectedLogement.host.name}
               ></img>
             </div>
             <div className="rating-container">
@@ -54,12 +55,12 @@ function Logement() {
           <div className="dropdown-container">
             <Collapse
               dropdownTitle="Description"
-              dropdownContent={logementData[0].description}
+              dropdownContent={selectedLogement.description}
               containerClass={'dropdown-btn-logement'}
             />
             <Collapse
               dropdownTitle="Équipements"
-              dropdownContent={logementData[0].equipments.map((equipment) => (
+              dropdownContent={selectedLogement.equipments.map((equipment) => (
                 <span key={equipment}>
                   {equipment}
                   <br />

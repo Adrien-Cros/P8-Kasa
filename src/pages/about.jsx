@@ -1,6 +1,6 @@
 import Collapse from '../components/Collapse/Collapse'
 import aboutInfo from '../data/about-info.json' //fichier contenant les infos de à propos
-import bannerImg from '../assets/kalen-emsley-Bkci_8qcdvQ-unsplash 2.png'
+import bannerImg from '../assets/valley.png'
 
 function About() {
   return (
